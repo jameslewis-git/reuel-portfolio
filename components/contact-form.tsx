@@ -3,7 +3,7 @@
 import type React from "react"
 import { useState, useRef } from "react"
 import { motion } from "framer-motion"
-import { Send, X, Loader2 } from "lucide-react"
+import { Send, X, Loader2, CheckCircle2 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -99,8 +99,20 @@ export function ContactForm({ onClose }: ContactFormProps) {
 
       if (response.ok) {
         toast({
-          title: "Success!",
-          description: "Your message has been sent. I'll get back to you soon!",
+          title: (
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="h-5 w-5 text-green-500" />
+              <span>Message Sent Successfully!</span>
+            </div>
+          ),
+          description: (
+            <div className="mt-2 text-sm text-zinc-400">
+              <p>Thank you for reaching out! I'll get back to you as soon as possible.</p>
+              <p className="mt-1">Check your email for a confirmation.</p>
+            </div>
+          ),
+          duration: 5000,
+          className: "bg-zinc-800 border border-zinc-700/50"
         })
         
         setFormData({
@@ -116,9 +128,17 @@ export function ContactForm({ onClose }: ContactFormProps) {
     } catch (error) {
       console.error('Error sending message:', error)
       toast({
-        title: "Error",
-        description: error instanceof Error ? error.message : "Failed to send message. Please try again later.",
-        variant: "destructive"
+        title: (
+          <div className="flex items-center gap-2 text-red-400">
+            <X className="h-5 w-5" />
+            <span>Error Sending Message</span>
+          </div>
+        ),
+        description: error instanceof Error 
+          ? error.message 
+          : "Failed to send message. Please try again later.",
+        variant: "destructive",
+        duration: 4000
       })
     } finally {
       setIsSubmitting(false)
