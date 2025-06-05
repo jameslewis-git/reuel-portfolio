@@ -216,17 +216,17 @@ export default function Portfolio() {
           <SectionHeading title="My Skills" subtitle="Technologies I work with" />
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-16">
-            <SkillBadge name="JavaScript" level={90} />
-            <SkillBadge name="TypeScript" level={85} />
+            <SkillBadge name="JavaScript" level={70} />
+            <SkillBadge name="TypeScript" level={95} />
             <SkillBadge name="React" level={95} />
             <SkillBadge name="Next.js" level={90} />
             <SkillBadge name="Node.js" level={80} />
             <SkillBadge name="HTML/CSS" level={95} />
             <SkillBadge name="Tailwind CSS" level={90} />
-            <SkillBadge name="GraphQL" level={75} />
+            <SkillBadge name="Python" level={85} />
             <SkillBadge name="PostgreSQL" level={70} />
-            <SkillBadge name="AWS" level={65} />
-            <SkillBadge name="Docker" level={60} />
+            <SkillBadge name="Github" level={65} />
+            <SkillBadge name="MangoDB" level={60} />
             <SkillBadge name="Git" level={85} />
           </div>
         </div>
@@ -244,26 +244,26 @@ export default function Portfolio() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
             <ProjectCard
-              title="E-commerce Platform"
-              description="A full-stack e-commerce platform built with Next.js, Stripe, and Prisma."
-              tags={["Next.js", "TypeScript", "Prisma", "Stripe"]}
-              image="/placeholder.svg?height=400&width=600"
-              demoUrl="https://example.com"
-              repoUrl="https://github.com"
+              title="EduInsight - Your Gateway to Free Engineering Courses"
+              description="A full-stack course aggregation platform built with Next.js, Supabase, and TypeScript."
+              tags={["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "Recharts"]}
+              image="/images/projects/eduinsight.png"
+              demoUrl="https://eduinsight-project.netlify.app/"
+              repoUrl="https://github.com/jameslewis-git/EduInsight--Your.Gateway.to.Free.Engineering.Courses.git"
             />
             <ProjectCard
               title="Task Management App"
               description="A collaborative task management application with real-time updates."
               tags={["React", "Firebase", "Tailwind CSS", "Redux"]}
-              image="/placeholder.svg?height=400&width=600"
-              demoUrl="https://example.com"
-              repoUrl="https://github.com"
+              image="/images/projects/task-manager.png"
+              demoUrl="https://eduinsight-project.netlify.app/"
+              repoUrl="https://github.com/jameslewis-git/EduInsight--Your.Gateway.to.Free.Engineering.Courses.git"
             />
             <ProjectCard
               title="AI Content Generator"
               description="An AI-powered content generation tool using OpenAI's GPT models."
               tags={["Next.js", "OpenAI API", "Node.js", "MongoDB"]}
-              image="/placeholder.svg?height=400&width=600"
+              image="/images/projects/ai-content.png"
               demoUrl="https://example.com"
               repoUrl="https://github.com"
             />
@@ -271,7 +271,7 @@ export default function Portfolio() {
               title="Fitness Tracker"
               description="A mobile-first fitness tracking application with data visualization."
               tags={["React Native", "TypeScript", "D3.js", "Firebase"]}
-              image="/placeholder.svg?height=400&width=600"
+              image="/images/projects/fitness-tracker.png"
               demoUrl="https://example.com"
               repoUrl="https://github.com"
             />
@@ -279,7 +279,7 @@ export default function Portfolio() {
               title="Weather Dashboard"
               description="A beautiful weather dashboard with forecasts and historical data."
               tags={["React", "Weather API", "Chart.js", "Styled Components"]}
-              image="/placeholder.svg?height=400&width=600"
+              image="/images/projects/weather-app.png"
               demoUrl="https://example.com"
               repoUrl="https://github.com"
             />

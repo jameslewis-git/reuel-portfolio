@@ -6,6 +6,7 @@ import { ArrowUpRight, Github } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { ProjectThumbnail } from "@/components/project-thumbnail"
 
 interface ProjectCardProps {
   title: string
@@ -29,14 +30,8 @@ export function ProjectCard({ title, description, tags, image, demoUrl, repoUrl 
         <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
 
         <div className="relative h-full flex flex-col">
-          <div className="relative overflow-hidden h-48">
-            <div className="absolute inset-0 bg-gradient-to-b from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
-            <img
-              src={image || "/placeholder.svg"}
-              alt={title}
-              className={`w-full h-full object-cover transition-transform duration-700 ${isHovered ? "scale-110" : "scale-100"}`}
-            />
-          </div>
+          {/* Project thumbnail */}
+          <ProjectThumbnail src={image} alt={title} />
 
           <div className="p-6 flex-grow">
             <h3 className="text-xl font-bold mb-2">{title}</h3>
