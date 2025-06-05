@@ -252,44 +252,44 @@ export default function Portfolio() {
               repoUrl="https://github.com/jameslewis-git/EduInsight--Your.Gateway.to.Free.Engineering.Courses.git"
             />
             <ProjectCard
-              title="Task Management App"
-              description="A collaborative task management application with real-time updates."
-              tags={["React", "Firebase", "Tailwind CSS", "Redux"]}
-              image="/images/projects/task-manager.png"
-              demoUrl="https://eduinsight-project.netlify.app/"
+              title="Quantum Habits - Daily habit checklist"
+              description="A terminal-themed habit tracking app built with Next.js, TypeScript, and Framer Motion."
+              tags={["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "dnd-kit"]}
+              image="/images/projects/checklist.png"
+              demoUrl="https://dailyhabitchecklist.netlify.app/"
               repoUrl="https://github.com/jameslewis-git/EduInsight--Your.Gateway.to.Free.Engineering.Courses.git"
             />
             <ProjectCard
-              title="AI Content Generator"
-              description="An AI-powered content generation tool using OpenAI's GPT models."
-              tags={["Next.js", "OpenAI API", "Node.js", "MongoDB"]}
-              image="/images/projects/ai-content.png"
-              demoUrl="https://example.com"
-              repoUrl="https://github.com"
+              title="Random Activity Generator"
+              description="An interactive app with dynamic card animations and a modern UI, built for the Code Circuit Hackathon."
+              tags={["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Netlify"]}
+              image="/images/projects/randomactivity.png"
+              demoUrl="https://activitygeneratorcodecircuit.netlify.app/"
+              repoUrl="https://github.com/jameslewis-git/Random-activity-generator.git"
             />
             <ProjectCard
-              title="Fitness Tracker"
-              description="A mobile-first fitness tracking application with data visualization."
-              tags={["React Native", "TypeScript", "D3.js", "Firebase"]}
-              image="/images/projects/fitness-tracker.png"
-              demoUrl="https://example.com"
-              repoUrl="https://github.com"
+              title="NutriAI - Smart Nutrition and Diet Planning"
+              description="A full-stack AI-powered nutrition and diet planning app built with Next.js, MongoDB, and Google Gemini API."
+              tags={["React", "TypeScript", "MongoDB", "Google Gemini AI", "Tailwind CSS"]}
+              image="/images/projects/nutriai.png"
+              demoUrl="https://nutriproject.netlify.app/"
+              repoUrl="https://github.com/jameslewis-git/NutriAI.git"
             />
             <ProjectCard
-              title="Weather Dashboard"
-              description="A beautiful weather dashboard with forecasts and historical data."
-              tags={["React", "Weather API", "Chart.js", "Styled Components"]}
-              image="/images/projects/weather-app.png"
-              demoUrl="https://example.com"
-              repoUrl="https://github.com"
+              title="James Lewis - Digital Contact Card 👋"
+              description="A personal web hub showcasing my Full Stack Web Development and AI & Data Science expertise."
+              tags={["React", "TypeScript", "Tailwind CSS", "Next.js", "UI/UX"]}
+              image="/images/projects/contactcard.png"
+              demoUrl="https://james-contactcard.netlify.app/"
+              repoUrl="https://github.com/jameslewis-git/James-ContactCard.git"
             />
             <ProjectCard
               title="Portfolio Website"
               description="This portfolio website built with Next.js and Tailwind CSS."
               tags={["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"]}
-              image="/placeholder.svg?height=400&width=600"
-              demoUrl="https://example.com"
-              repoUrl="https://github.com"
+              image="/images/projects/portfolio.png"
+              demoUrl="https://jameslewisportfolio.netlify.app/"
+              repoUrl="https://github.com/jameslewis-git/portfolio.git"
             />
           </div>
         </div>
