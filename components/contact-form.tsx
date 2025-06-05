@@ -1,10 +1,10 @@
 "use client"
 
 import type React from "react"
-
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { motion } from "framer-motion"
-import { Send, X } from "lucide-react"
+import { Send, X, Loader2 } from "lucide-react"
+import emailjs from '@emailjs/browser'
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -15,25 +15,114 @@ interface ContactFormProps {
   onClose?: () => void
 }
 
+interface FormData {
+  name: string
+  email: string
+  subject: string
+  message: string
+}
+
 export function ContactForm({ onClose }: ContactFormProps) {
   const { toast } = useToast()
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  })
+  const [errors, setErrors] = useState<Partial<FormData>>({})
+  const formRef = useRef<HTMLFormElement>(null)
+
+  const validateForm = () => {
+    const newErrors: Partial<FormData> = {}
+    
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required"
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required"
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address"
+    }
+    
+    if (!formData.subject.trim()) {
+      newErrors.subject = "Subject is required"
+    }
+    
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required"
+    }
+
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+    // Clear error when user starts typing
+    if (errors[name as keyof FormData]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: undefined
+      }))
+    }
+  }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    
+    if (!validateForm()) {
+      toast({
+        title: "Error",
+        description: "Please fill in all required fields correctly.",
+        variant: "destructive"
+      })
+      return
+    }
+
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    try {
+      const result = await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        formRef.current!,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      )
 
-    toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    })
-
-    setIsSubmitting(false)
-    onClose?.()
-    e.currentTarget.reset()
+      if (result.text === 'OK') {
+        toast({
+          title: "Success!",
+          description: "Your message has been sent. I'll get back to you soon!",
+        })
+        
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: ""
+        })
+        formRef.current?.reset()
+        onClose?.()
+      } else {
+        throw new Error('Failed to send message')
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive"
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -60,48 +149,84 @@ export function ContactForm({ onClose }: ContactFormProps) {
 
           <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
               <Input
+                name="name"
                 placeholder="Your Name"
-                required
-                className="bg-zinc-900/50 border-zinc-700 focus:border-purple-500 focus:ring-purple-500/20"
+                value={formData.name}
+                onChange={handleChange}
+                className={`bg-zinc-900/50 border-zinc-700 focus:border-purple-500 focus:ring-purple-500/20 ${
+                  errors.name ? 'border-red-500' : ''
+                }`}
               />
+              {errors.name && (
+                <p className="text-sm text-red-500">{errors.name}</p>
+              )}
             </div>
+            
             <div className="space-y-2">
               <Input
+                name="email"
                 type="email"
                 placeholder="Your Email"
-                required
-                className="bg-zinc-900/50 border-zinc-700 focus:border-purple-500 focus:ring-purple-500/20"
+                value={formData.email}
+                onChange={handleChange}
+                className={`bg-zinc-900/50 border-zinc-700 focus:border-purple-500 focus:ring-purple-500/20 ${
+                  errors.email ? 'border-red-500' : ''
+                }`}
               />
+              {errors.email && (
+                <p className="text-sm text-red-500">{errors.email}</p>
+              )}
             </div>
+
             <div className="space-y-2">
               <Input
+                name="subject"
                 placeholder="Subject"
-                required
-                className="bg-zinc-900/50 border-zinc-700 focus:border-purple-500 focus:ring-purple-500/20"
+                value={formData.subject}
+                onChange={handleChange}
+                className={`bg-zinc-900/50 border-zinc-700 focus:border-purple-500 focus:ring-purple-500/20 ${
+                  errors.subject ? 'border-red-500' : ''
+                }`}
               />
+              {errors.subject && (
+                <p className="text-sm text-red-500">{errors.subject}</p>
+              )}
             </div>
+
             <div className="space-y-2">
               <Textarea
+                name="message"
                 placeholder="Your Message"
                 rows={5}
-                required
-                className="bg-zinc-900/50 border-zinc-700 focus:border-purple-500 focus:ring-purple-500/20"
+                value={formData.message}
+                onChange={handleChange}
+                className={`bg-zinc-900/50 border-zinc-700 focus:border-purple-500 focus:ring-purple-500/20 ${
+                  errors.message ? 'border-red-500' : ''
+                }`}
               />
+              {errors.message && (
+                <p className="text-sm text-red-500">{errors.message}</p>
+              )}
             </div>
+
             <Button
               type="submit"
               className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0"
               disabled={isSubmitting}
             >
               {isSubmitting ? (
-                <>Sending...</>
+                <div className="flex items-center gap-2">
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  <span>Sending...</span>
+                </div>
               ) : (
-                <>
-                  Send Message <Send className="ml-2 h-4 w-4" />
-                </>
+                <div className="flex items-center gap-2">
+                  Send Message
+                  <Send className="h-4 w-4" />
+                </div>
               )}
             </Button>
           </form>
