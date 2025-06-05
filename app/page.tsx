@@ -3,6 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, Github, Linkedin, Mail, Twitter, Download } from "lucide-react"
+import { motion } from "framer-motion"
 
 import { Button } from "@/components/ui/button"
 import { ProjectCard } from "@/components/project-card"
@@ -121,11 +122,85 @@ export default function Portfolio() {
           </div>
         </div>
 
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 rounded-full border-2 border-white/20 flex justify-center items-start p-1">
-            <div className="w-1.5 h-1.5 rounded-full bg-white/60 animate-pulse"></div>
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1 }}
+          className="absolute inset-x-0 bottom-4 mx-auto flex flex-col items-center justify-center gap-4 w-full cursor-pointer group"
+          onClick={() => {
+            const aboutSection = document.getElementById('about')
+            if (aboutSection) {
+              aboutSection.scrollIntoView({ behavior: 'smooth' })
+            }
+          }}
+        >
+          {/* Text with gradient and glow */}
+          <motion.div
+            className="relative"
+            animate={{ y: [0, -4, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <span className="text-sm font-medium bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-purple-400 tracking-wider relative z-10">
+              SCROLL DOWN
+            </span>
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-purple-500/20 blur-lg -z-10" />
+          </motion.div>
+
+          {/* Animated scroll indicator */}
+          <div className="relative">
+            {/* Outer glow rings */}
+            <motion.div
+              className="absolute -inset-2 rounded-full bg-gradient-to-r from-purple-500/20 via-pink-500/30 to-purple-500/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              animate={{
+                scale: [1, 1.1, 1],
+                opacity: [0, 0.5, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+
+            {/* Main circle container */}
+            <div className="relative w-14 h-14 rounded-full bg-zinc-900/80 backdrop-blur-md border border-zinc-700/50 flex items-center justify-center overflow-hidden group-hover:border-purple-500/50 transition-all duration-500 shadow-lg shadow-purple-500/20">
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-b from-purple-500/10 via-pink-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              {/* Animated dots */}
+              <div className="relative w-1 h-8">
+                {[0, 0.15, 0.3].map((delay, index) => (
+                  <motion.div
+                    key={index}
+                    className={`absolute w-1 h-1 rounded-full ${index % 2 === 0 ? 'bg-purple-500' : 'bg-pink-500'}`}
+                    animate={{
+                      y: [0, 24, 0],
+                      opacity: [0, 1, 0],
+                      scale: [0.8, 1, 0.8],
+                    }}
+                    transition={{
+                      duration: 1.5,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: delay,
+                    }}
+                  />
+                ))}
+              </div>
+
+              {/* Subtle rotating gradient border */}
+              <motion.div
+                className="absolute inset-0 rounded-full border border-gradient-to-r from-purple-500/20 to-pink-500/20"
+                animate={{ rotate: 360 }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              />
+            </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* About Section */}
