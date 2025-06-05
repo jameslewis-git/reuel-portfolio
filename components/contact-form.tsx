@@ -1,10 +1,9 @@
 "use client"
 
 import type React from "react"
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef } from "react"
 import { motion } from "framer-motion"
 import { Send, X, Loader2 } from "lucide-react"
-import emailjs from '@emailjs/browser'
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -32,14 +31,6 @@ export function ContactForm({ onClose }: ContactFormProps) {
     message: ""
   })
   const [errors, setErrors] = useState<Partial<FormData>>({})
-  const formRef = useRef<HTMLFormElement>(null)
-
-  useEffect(() => {
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-    if (publicKey) {
-      emailjs.init(publicKey)
-    }
-  }, [])
 
   const validateForm = () => {
     const newErrors: Partial<FormData> = {}
@@ -96,29 +87,17 @@ export function ContactForm({ onClose }: ContactFormProps) {
     setIsSubmitting(true)
 
     try {
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-
-      // Log for debugging
-      console.log('Config:', {
-        serviceId,
-        templateId,
-        publicKey: publicKey ? 'Set' : 'Not Set'
+      const response = await fetch('/.netlify/functions/sendEmail', {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: {
+          'Content-Type': 'application/json',
+        },
       })
 
-      if (!serviceId || !templateId || !publicKey) {
-        throw new Error('EmailJS configuration is missing')
-      }
+      const data = await response.json()
 
-      const result = await emailjs.sendForm(
-        serviceId,
-        templateId,
-        formRef.current!,
-        publicKey
-      )
-
-      if (result.text === 'OK') {
+      if (response.ok) {
         toast({
           title: "Success!",
           description: "Your message has been sent. I'll get back to you soon!",
@@ -130,13 +109,12 @@ export function ContactForm({ onClose }: ContactFormProps) {
           subject: "",
           message: ""
         })
-        formRef.current?.reset()
         onClose?.()
       } else {
-        throw new Error('Failed to send message')
+        throw new Error(data.message || 'Failed to send message')
       }
     } catch (error) {
-      console.error('\n EmailJS Error: \n', error)
+      console.error('Error sending message:', error)
       toast({
         title: "Error",
         description: error instanceof Error ? error.message : "Failed to send message. Please try again later.",
@@ -171,7 +149,7 @@ export function ContactForm({ onClose }: ContactFormProps) {
 
           <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
 
-          <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
               <Input
                 name="name"

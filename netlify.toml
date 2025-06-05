@@ -1,11 +1,16 @@
 [build]
   command = "npm run build"
   publish = ".next"
+  functions = "netlify/functions"
 
 [build.environment]
   NEXT_USE_NETLIFY_EDGE = "true"
   NEXT_PRIVATE_TARGET = "server"
   NODE_VERSION = "20.11.1"
+
+[functions]
+  node_bundler = "esbuild"
+  external_node_modules = ["nodemailer"]
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
