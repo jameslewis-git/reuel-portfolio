@@ -35,9 +35,9 @@ export function ContactForm({ onClose }: ContactFormProps) {
   const formRef = useRef<HTMLFormElement>(null)
 
   useEffect(() => {
-    // Initialize EmailJS with public key
-    if (process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY) {
-      emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+    if (publicKey) {
+      emailjs.init(publicKey)
     }
   }, [])
 
@@ -96,22 +96,26 @@ export function ContactForm({ onClose }: ContactFormProps) {
     setIsSubmitting(true)
 
     try {
-      // Log environment variables (they will be undefined if not set)
-      console.log('Service ID:', process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID)
-      console.log('Template ID:', process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID)
-      console.log('Public Key:', process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ? 'Set' : 'Not Set')
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
 
-      if (!process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ||
-          !process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ||
-          !process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY) {
+      // Log for debugging
+      console.log('Config:', {
+        serviceId,
+        templateId,
+        publicKey: publicKey ? 'Set' : 'Not Set'
+      })
+
+      if (!serviceId || !templateId || !publicKey) {
         throw new Error('EmailJS configuration is missing')
       }
 
       const result = await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        serviceId,
+        templateId,
         formRef.current!,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        publicKey
       )
 
       if (result.text === 'OK') {
@@ -120,7 +124,6 @@ export function ContactForm({ onClose }: ContactFormProps) {
           description: "Your message has been sent. I'll get back to you soon!",
         })
         
-        // Reset form
         setFormData({
           name: "",
           email: "",
@@ -133,7 +136,7 @@ export function ContactForm({ onClose }: ContactFormProps) {
         throw new Error('Failed to send message')
       }
     } catch (error) {
-      console.error('EmailJS Error:', error)
+      console.error('\n EmailJS Error: \n', error)
       toast({
         title: "Error",
         description: error instanceof Error ? error.message : "Failed to send message. Please try again later.",

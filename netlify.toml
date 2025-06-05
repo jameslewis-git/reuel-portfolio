@@ -13,9 +13,9 @@
 # Production context: all deploys from the Production branch set in your site's
 # deploy contexts will inherit these settings.
 [context.production.environment]
-  NEXT_PUBLIC_EMAILJS_SERVICE_ID = "${NEXT_PUBLIC_EMAILJS_SERVICE_ID}"
-  NEXT_PUBLIC_EMAILJS_TEMPLATE_ID = "${NEXT_PUBLIC_EMAILJS_TEMPLATE_ID}"
-  NEXT_PUBLIC_EMAILJS_PUBLIC_KEY = "${NEXT_PUBLIC_EMAILJS_PUBLIC_KEY}"
+  NEXT_PUBLIC_EMAILJS_SERVICE_ID = "NEXT_PUBLIC_EMAILJS_SERVICE_ID"
+  NEXT_PUBLIC_EMAILJS_TEMPLATE_ID = "NEXT_PUBLIC_EMAILJS_TEMPLATE_ID"
+  NEXT_PUBLIC_EMAILJS_PUBLIC_KEY = "NEXT_PUBLIC_EMAILJS_PUBLIC_KEY"
 
 # Deploy Preview context: all deploys generated from a pull/merge request will
 # inherit these settings.
