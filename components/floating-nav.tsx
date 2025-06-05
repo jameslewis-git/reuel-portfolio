@@ -7,11 +7,14 @@ import { Menu, X } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { useMobile } from "@/hooks/use-mobile"
+import { useResume } from "@/hooks/use-resume"
+import { ResumeModal } from "@/components/resume-modal"
 
 export function FloatingNav() {
   const [isVisible, setIsVisible] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const isMobile = useMobile()
+  const { isModalOpen, openModal, closeModal } = useResume()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -85,6 +88,7 @@ export function FloatingNav() {
               <Button
                 size="sm"
                 className="ml-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0"
+                onClick={openModal}
               >
                 Resume
               </Button>
@@ -112,12 +116,18 @@ export function FloatingNav() {
                 {item.name}
               </Link>
             ))}
-            <Button className="mt-6 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0">
+            <Button 
+              className="mt-6 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0"
+              onClick={openModal}
+            >
               Resume
             </Button>
           </div>
         </motion.div>
       )}
+
+      {/* Resume Modal */}
+      <ResumeModal isOpen={isModalOpen} onClose={closeModal} />
     </>
   )
 }

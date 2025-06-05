@@ -4,14 +4,18 @@ import type React from "react"
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { Send } from "lucide-react"
+import { Send, X } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/hooks/use-toast"
 
-export function ContactForm() {
+interface ContactFormProps {
+  onClose?: () => void
+}
+
+export function ContactForm({ onClose }: ContactFormProps) {
   const { toast } = useToast()
   const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -28,20 +32,32 @@ export function ContactForm() {
     })
 
     setIsSubmitting(false)
+    onClose?.()
     e.currentTarget.reset()
   }
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 20 }}
+      transition={{ duration: 0.3 }}
     >
       <div className="relative overflow-hidden rounded-xl bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 p-6 transition-all duration-300 hover:border-purple-500/50">
         <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl blur opacity-25 hover:opacity-100 transition duration-1000 hover:duration-200"></div>
 
         <div className="relative">
+          {onClose && (
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute top-0 right-0 rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+              onClick={onClose}
+            >
+              <X className="h-5 w-5" />
+            </Button>
+          )}
+
           <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
 
           <form onSubmit={handleSubmit} className="space-y-6">

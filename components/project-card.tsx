@@ -3,7 +3,6 @@
 import { useState } from "react"
 import Link from "next/link"
 import { ArrowUpRight, Github } from "lucide-react"
-import { motion } from "framer-motion"
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -21,18 +20,12 @@ export function ProjectCard({ title, description, tags, image, demoUrl, repoUrl 
   const [isHovered, setIsHovered] = useState(false)
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true }}
+    <div
       className="group"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      <div
-        className="relative h-full overflow-hidden rounded-xl bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 transition-all duration-300 group-hover:border-purple-500/50"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
+      <div className="relative h-full overflow-hidden rounded-xl bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 transition-all duration-300 group-hover:border-purple-500/50">
         <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
 
         <div className="relative h-full flex flex-col">
@@ -84,6 +77,6 @@ export function ProjectCard({ title, description, tags, image, demoUrl, repoUrl 
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 }
