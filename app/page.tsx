@@ -152,17 +152,14 @@ export default function Portfolio() {
             <div className="space-y-6">
               <GlassmorphicCard>
                 <p className="text-lg text-zinc-300">
-                  I'm a passionate software engineer with experience building web applications and digital products. I
-                  specialize in frontend development with React and Next.js, but I'm also comfortable working with
-                  backend technologies.
+                I'm James Lewis, a driven B.E. student in AI and Data Science at Vidyavardhini's College of Engineering and Technology, Mumbai. I’m passionate about turning ideas into reality through coding and AI innovation. My focus is on creating smart, impactful solutions that push the boundaries of technology.
                 </p>
                 <p className="text-lg text-zinc-300 mt-4">
-                  My journey in tech started with a strong foundation in software development. I've worked with various
-                  companies to create intuitive, performant, and accessible digital experiences.
+                I thrive on solving complex problems, from building machine learning models to crafting intuitive software. With a strong foundation in coding, I’m always exploring new ways to innovate and make a difference through tech.
                 </p>
                 <p className="text-lg text-zinc-300 mt-4">
-                  When I'm not coding, you can find me exploring new technologies, contributing to open-source projects,
-                  and staying up-to-date with the latest industry trends.
+                Eager to join cutting-edge AI and engineering teams, I’m seeking internships or entry-level roles to contribute my skills and learn from the best. 
+                Let’s connect to build the future of tech together!
                 </p>
 
                 <div className="grid grid-cols-2 gap-4 mt-8">
@@ -172,7 +169,7 @@ export default function Portfolio() {
                   </div>
                   <div className="space-y-1">
                     <div className="text-sm text-zinc-500">Email</div>
-                    <div className="font-medium">james.lewis@example.com</div>
+                    <div className="font-medium">jamesslewiss95@gmail.com</div>
                   </div>
                   <div className="space-y-1">
                     <div className="text-sm text-zinc-500">Location</div>
