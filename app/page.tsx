@@ -4,6 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, Github, Linkedin, Mail, Twitter, Download } from "lucide-react"
 import { motion } from "framer-motion"
+import { useState } from "react"
 
 import { Button } from "@/components/ui/button"
 import { ProjectCard } from "@/components/project-card"
@@ -19,9 +20,11 @@ import { SectionHeading } from "@/components/section-heading"
 import { GlassmorphicCard } from "@/components/glassmorphic-card"
 import { useResume } from "@/hooks/use-resume"
 import { ResumeModal } from "@/components/resume-modal"
+import { CertificatesModal } from "@/components/certificates-modal"
 
 export default function Portfolio() {
   const { isModalOpen, openModal, closeModal, downloadResume } = useResume()
+  const [isCertificatesOpen, setIsCertificatesOpen] = useState(false)
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-zinc-900 via-zinc-900 to-black text-white overflow-hidden">
@@ -386,10 +389,169 @@ export default function Portfolio() {
         </div>
 
         <div className="container relative z-10">
-          <SectionHeading title="Work Experience" subtitle="My professional journey" />
+          <SectionHeading title="Education & Experience" subtitle="My academic journey" />
 
           <div className="mt-16">
-            <Timeline />
+            {/* Current Status Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <div className="relative overflow-hidden rounded-xl bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 p-8 transition-all duration-300 hover:border-purple-500/50">
+                <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl blur opacity-25 hover:opacity-100 transition duration-1000 hover:duration-200"></div>
+                
+                <div className="relative">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center">
+                        <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold">Currently</h3>
+                      <p className="text-zinc-400">Pursuing B.E. in AI and Data Science</p>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {/* Education Details */}
+                    <div className="space-y-4">
+                      <h4 className="text-lg font-semibold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
+                        Education
+                      </h4>
+                      <div className="space-y-2">
+                        <p className="text-zinc-300">Vidyavardhini's College of Engineering and Technology</p>
+                        <p className="text-zinc-400">B.E. in Artificial Intelligence and Data Science</p>
+                        <p className="text-zinc-400">2023 - 2027</p>
+                      </div>
+                    </div>
+
+                    {/* Key Achievements */}
+                    <div className="space-y-4">
+                      <h4 className="text-lg font-semibold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
+                        Achievements & Activities
+                      </h4>
+                      <ul className="space-y-2 text-zinc-300">
+                        <li className="flex items-center gap-2">
+                          <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
+                          <span>Active member of College Tech Club</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <div className="w-1.5 h-1.5 rounded-full bg-pink-500"></div>
+                          <span>Participated in Code Circuit Hackathon</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
+                          <span>Built 5+ Full Stack Projects</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <div className="w-1.5 h-1.5 rounded-full bg-pink-500"></div>
+                          <span>Learning AI/ML and Web Development</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Current Focus */}
+                  <div className="mt-8 p-4 rounded-lg bg-zinc-900/50 border border-zinc-800">
+                    <h4 className="text-lg font-semibold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
+                      Current Focus
+                    </h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                        <span className="text-zinc-300">Learning Next.js</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
+                        <span className="text-zinc-300">AI/ML Projects</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></div>
+                        <span className="text-zinc-300">Freelance Work</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></div>
+                        <span className="text-zinc-300">Internship Ready</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Educational Timeline */}
+            <div className="mt-16">
+              <h2 className="text-2xl font-semibold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
+                Educational Journey
+              </h2>
+              <Timeline />
+
+              {/* Certificates Button */}
+              <div className="mt-16 mb-8 flex justify-center items-center w-full">
+                <div className="w-full max-w-[480px] mx-auto">
+                  <Button
+                    className="group relative w-full rounded-2xl bg-zinc-900/50 hover:bg-zinc-900/70 transition-all duration-500 backdrop-blur-sm border border-zinc-800/50 hover:border-purple-500/50"
+                    onClick={() => setIsCertificatesOpen(true)}
+                  >
+                    {/* Background Effects */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 via-pink-500/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-gradient-x rounded-2xl"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                    
+                    {/* Glowing Border */}
+                    <div className="absolute inset-[2px] rounded-xl bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 opacity-20 group-hover:opacity-100 blur-sm transition-opacity duration-500"></div>
+                    
+                    {/* Content Container */}
+                    <div className="relative px-6 py-5">
+                      {/* Top Row with Icon and Title */}
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-4">
+                          {/* Animated Certificate Icon */}
+                          <div className="relative w-11 h-11">
+                            <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl opacity-20 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
+                            <div className="relative h-full w-full flex items-center justify-center">
+                              <svg
+                                className="w-6 h-6 text-purple-400 group-hover:text-purple-300 transition-colors duration-500"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="2"
+                                  d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          
+                          {/* Title */}
+                          <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400 group-hover:from-purple-300 group-hover:to-pink-300">
+                            View Certificates
+                          </h3>
+                        </div>
+
+                        {/* Arrow Icon */}
+                        <ArrowRight className="w-5 h-5 text-purple-400 transform translate-x-0 group-hover:translate-x-1 transition-all duration-500" />
+                      </div>
+
+                      {/* Bottom Text */}
+                      <p className="text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors duration-500 mt-2 ml-[60px]">
+                        Explore my achievements and certifications
+                      </p>
+
+                      {/* Decorative Elements */}
+                      <div className="absolute bottom-1 left-2 right-2 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                      <div className="absolute top-1 left-2 right-2 h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-100"></div>
+                    </div>
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -464,6 +626,12 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
+
+      {/* Certificates Modal */}
+      <CertificatesModal 
+        isOpen={isCertificatesOpen}
+        onClose={() => setIsCertificatesOpen(false)}
+      />
 
       {/* Resume Modal */}
       <ResumeModal isOpen={isModalOpen} onClose={closeModal} />
