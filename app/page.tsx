@@ -55,7 +55,15 @@ export default function Portfolio() {
               Future with Passion
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button className="relative overflow-hidden group bg-gradient-to-r from-purple-500 to-pink-500 border-0">
+              <Button 
+                className="relative overflow-hidden group bg-gradient-to-r from-purple-500 to-pink-500 border-0"
+                onClick={() => {
+                  const projectsSection = document.getElementById('projects')
+                  if (projectsSection) {
+                    projectsSection.scrollIntoView({ behavior: 'smooth' })
+                  }
+                }}
+              >
                 <span className="relative z-10 flex items-center">
                   View Projects <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </span>
