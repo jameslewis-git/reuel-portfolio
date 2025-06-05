@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Send, X, Loader2 } from "lucide-react"
 import emailjs from '@emailjs/browser'
@@ -33,6 +33,13 @@ export function ContactForm({ onClose }: ContactFormProps) {
   })
   const [errors, setErrors] = useState<Partial<FormData>>({})
   const formRef = useRef<HTMLFormElement>(null)
+
+  useEffect(() => {
+    // Initialize EmailJS with public key
+    if (process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY) {
+      emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
+    }
+  }, [])
 
   const validateForm = () => {
     const newErrors: Partial<FormData> = {}
@@ -89,6 +96,11 @@ export function ContactForm({ onClose }: ContactFormProps) {
     setIsSubmitting(true)
 
     try {
+      // Log environment variables (they will be undefined if not set)
+      console.log('Service ID:', process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID)
+      console.log('Template ID:', process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID)
+      console.log('Public Key:', process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ? 'Set' : 'Not Set')
+
       if (!process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ||
           !process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ||
           !process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY) {
@@ -121,9 +133,10 @@ export function ContactForm({ onClose }: ContactFormProps) {
         throw new Error('Failed to send message')
       }
     } catch (error) {
+      console.error('EmailJS Error:', error)
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again later.",
+        description: error instanceof Error ? error.message : "Failed to send message. Please try again later.",
         variant: "destructive"
       })
     } finally {
