@@ -12,6 +12,20 @@ const experiences = [
       "Currently pursuing Bachelor's in AI & Data Science. Active in tech clubs, building projects, and learning new technologies.",
   },
   {
+    title: "Technical Team Member - NSDC",
+    company: "NSDC - National Student Data Corps ",
+    period: "2023 - Present",
+    description:
+      "Responsible for building and maintaining the events for the organization. Also, responsible for the technical side of the events.",
+  },
+  {
+    title: "Technical Team Member - PAT",
+    company: "PAT - Placements and Training Cell",
+    period: "2024 - Present",
+    description:
+      "Responsible for the technical side of the events.",
+  },
+  {
     title: "Full Stack Development",
     company: "Self-Learning & Projects",
     period: "2023 - Present",

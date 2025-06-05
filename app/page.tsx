@@ -449,7 +449,7 @@ export default function Portfolio() {
                         </li>
                         <li className="flex items-center gap-2">
                           <div className="w-1.5 h-1.5 rounded-full bg-pink-500"></div>
-                          <span>Learning AI/ML and Web Development</span>
+                          <span>Learning Web Development</span>
                         </li>
                       </ul>
                     </div>
@@ -491,10 +491,10 @@ export default function Portfolio() {
               <Timeline />
 
               {/* Certificates Button */}
-              <div className="mt-16 mb-8 flex justify-center items-center w-full">
-                <div className="w-full max-w-[480px] mx-auto">
+              <div className="mt-40 mb-4 flex justify-center items-center w-full">
+                <div className="w-full max-w-[520px] mx-auto">
                   <Button
-                    className="group relative w-full rounded-2xl bg-zinc-900/50 hover:bg-zinc-900/70 transition-all duration-500 backdrop-blur-sm border border-zinc-800/50 hover:border-purple-500/50"
+                    className="group relative w-full rounded-2xl bg-zinc-900/50 hover:bg-zinc-900/70 transition-all duration-500 backdrop-blur-sm border border-zinc-800/50 hover:border-purple-500/50 py-14"
                     onClick={() => setIsCertificatesOpen(true)}
                   >
                     {/* Background Effects */}
@@ -505,16 +505,16 @@ export default function Portfolio() {
                     <div className="absolute inset-[2px] rounded-xl bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 opacity-20 group-hover:opacity-100 blur-sm transition-opacity duration-500"></div>
                     
                     {/* Content Container */}
-                    <div className="relative px-6 py-5">
+                    <div className="relative px-15 py-9">
                       {/* Top Row with Icon and Title */}
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-4">
                           {/* Animated Certificate Icon */}
-                          <div className="relative w-11 h-11">
+                          <div className="relative w-12 h-12">
                             <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl opacity-20 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
                             <div className="relative h-full w-full flex items-center justify-center">
                               <svg
-                                className="w-6 h-6 text-purple-400 group-hover:text-purple-300 transition-colors duration-500"
+                                className="w-7 h-7 text-purple-400 group-hover:text-purple-300 transition-colors duration-500"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
@@ -530,17 +530,17 @@ export default function Portfolio() {
                           </div>
                           
                           {/* Title */}
-                          <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400 group-hover:from-purple-300 group-hover:to-pink-300">
+                          <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400 group-hover:from-purple-300 group-hover:to-pink-300">
                             View Certificates
                           </h3>
                         </div>
 
                         {/* Arrow Icon */}
-                        <ArrowRight className="w-5 h-5 text-purple-400 transform translate-x-0 group-hover:translate-x-1 transition-all duration-500" />
+                        <ArrowRight className="w-6 h-6 text-purple-400 transform translate-x-0 group-hover:translate-x-1 transition-all duration-500" />
                       </div>
 
                       {/* Bottom Text */}
-                      <p className="text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors duration-500 mt-2 ml-[60px]">
+                      <p className="text-base text-zinc-400 group-hover:text-zinc-300 transition-colors duration-500 mt-3 ml-16">
                         Explore my achievements and certifications
                       </p>
 
