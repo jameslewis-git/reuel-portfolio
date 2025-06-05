@@ -61,7 +61,7 @@ export default function Portfolio() {
               </Button>
             </div>
             <div className="flex gap-4 pt-4">
-              <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <Link href="https://github.com/jameslewis-git" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="ghost"
                   size="icon"
@@ -71,7 +71,7 @@ export default function Portfolio() {
                   <span className="sr-only">GitHub</span>
                 </Button>
               </Link>
-              <Link href="https://www.linkedin.com/in/jameslewis/" target="_blank" rel="noopener noreferrer">
+              <Link href="https://www.linkedin.com/in/-jameslewis/" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="ghost"
                   size="icon"
@@ -91,7 +91,7 @@ export default function Portfolio() {
                   <span className="sr-only">Twitter</span>
                 </Button>
               </Link>
-              <Link href="mailto:james.lewis@example.com">
+              <Link href="mailto:jamesslewiss95@gmail.com">
                 <Button
                   variant="ghost"
                   size="icon"
