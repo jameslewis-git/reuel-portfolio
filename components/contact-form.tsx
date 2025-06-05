@@ -89,11 +89,17 @@ export function ContactForm({ onClose }: ContactFormProps) {
     setIsSubmitting(true)
 
     try {
+      if (!process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ||
+          !process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ||
+          !process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY) {
+        throw new Error('EmailJS configuration is missing')
+      }
+
       const result = await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
         formRef.current!,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       )
 
       if (result.text === 'OK') {
