@@ -344,7 +344,7 @@ export default function Portfolio() {
         </div>
 
         <div className="container relative z-10">
-          <SectionHeading title="Experience & Education" subtitle="My professional journey" />
+          <SectionHeading title="Experience & Academics" subtitle="My professional journey" />
 
           <div className="mt-16">
             {/* Current Status Card */}

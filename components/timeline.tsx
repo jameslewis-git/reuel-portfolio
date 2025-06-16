@@ -48,7 +48,7 @@ const experiences = [
         "Curated sports data for XML feeds and maintained fixture accuracy across multiple competitions. Conducted web-based research and ensured up-to-date venue and scheduling information.",
     },
     {
-      title: "Bachelor of Commerce (B.Com)",
+      title: "Academics - Bachelor of Commerce (B.Com)",
       company: "Mangalore University",
       period: "2015 – 2018",
       description:
