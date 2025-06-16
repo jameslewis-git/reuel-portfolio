@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Github, Linkedin, Mail, Download, Phone } from "lucide-react"
+import { ArrowRight, Github, Linkedin, Mail, Download, Phone, ArrowUpRight } from "lucide-react"
 import { motion } from "framer-motion"
 import { useState } from "react"
 
@@ -639,7 +639,7 @@ export default function Portfolio() {
               href="https://jameslewisportfolio.netlify.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative group"
+              className="relative group flex items-center gap-2 hover:gap-3 transition-all duration-300"
             >
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -667,6 +667,7 @@ export default function Portfolio() {
                 </motion.span>
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-pink-500/10 to-purple-500/0 opacity-0 group-hover:opacity-100 blur transition-all duration-500"></div>
               </motion.div>
+              <ArrowUpRight className="w-4 h-4 text-pink-400 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
             </Link>
           </div>
         </div>
