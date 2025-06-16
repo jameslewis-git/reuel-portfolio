@@ -121,19 +121,19 @@ export default function Portfolio() {
 
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Link href="mailto:reueldonald@gmail.com">
+                    <Link href="tel:+918310142706">
                       <Button
                         variant="ghost"
                         size="icon"
                         className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
                       >
-                        <Mail className="h-5 w-5" />
-                        <span className="sr-only">Email</span>
+                        <Phone className="h-5 w-5" />
+                        <span className="sr-only">Phone</span>
                       </Button>
                     </Link>
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p>Email</p>
+                    <p>Phone</p>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
@@ -602,36 +602,71 @@ export default function Portfolio() {
             </Link>
             <p className="text-sm text-zinc-500 mt-2">© {new Date().getFullYear()} Reuel Donald Lobo. All rights reserved.</p>
           </div>
-          <div className="flex gap-4">
-            <Link href="https://github.com/reuel-git" target="_blank" rel="noopener noreferrer">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+          <div className="flex flex-col items-center gap-4">
+            <div className="flex gap-4">
+              <Link href="mailto:reueldonald@gmail.com">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+                >
+                  <Mail className="h-5 w-5" />
+                  <span className="sr-only">Email</span>
+                </Button>
+              </Link>
+              <Link href="https://www.linkedin.com/in/reuel-lobo-738691163/" target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+                >
+                  <Linkedin className="h-5 w-5" />
+                  <span className="sr-only">LinkedIn</span>
+                </Button>
+              </Link>
+              <Link href="tel:+918310142706">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+                >
+                  <Phone className="h-5 w-5" />
+                  <span className="sr-only">Phone</span>
+                </Button>
+              </Link>
+            </div>
+            <Link 
+              href="https://jameslewisportfolio.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative group"
+            >
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                className="relative cursor-pointer"
               >
-                <Github className="h-5 w-5" />
-                <span className="sr-only">GitHub</span>
-              </Button>
-            </Link>
-            <Link href="https://www.linkedin.com/in/reuel-lobo-738691163/" target="_blank" rel="noopener noreferrer">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
-              >
-                <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
-              </Button>
-            </Link>
-            <Link href="mailto:reueldonald@gmail.com">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
-              >
-                <Mail className="h-5 w-5" />
-                <span className="sr-only">Email</span>
-              </Button>
+                <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-purple-500/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-all duration-1000 -z-10"></div>
+                <motion.span 
+                  className="text-base font-semibold relative block"
+                  animate={{ 
+                    y: [0, -3, 0],
+                    scale: [1, 1.03, 1],
+                  }}
+                  transition={{ 
+                    duration: 2.5,
+                    repeat: Infinity,
+                    ease: [0.4, 0, 0.2, 1]
+                  }}
+                >
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400/80 to-pink-400/80 group-hover:from-purple-400 group-hover:to-pink-400 transition-all duration-500">
+                    Designed by James Lewis
+                  </span>
+                  <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-purple-400/0 via-pink-400/50 to-purple-400/0 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                </motion.span>
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-pink-500/10 to-purple-500/0 opacity-0 group-hover:opacity-100 blur transition-all duration-500"></div>
+              </motion.div>
             </Link>
           </div>
         </div>
