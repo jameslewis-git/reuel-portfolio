@@ -27,10 +27,10 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
+import { CertificateDisplay } from "@/components/certificate-display"
 
 export default function Portfolio() {
   const { isModalOpen, openModal, closeModal, downloadResume } = useResume()
-  const [isCertificatesOpen, setIsCertificatesOpen] = useState(false)
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-zinc-900 via-zinc-900 to-black text-white overflow-hidden">
@@ -239,16 +239,16 @@ export default function Portfolio() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-16">
             <div className="relative">
               <div className="absolute -inset-4 rounded-xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur-xl opacity-70"></div>
-              <div className="relative aspect-square rounded-xl overflow-hidden border border-zinc-800">
+              <div className="relative aspect-[4/5] rounded-xl overflow-hidden border border-zinc-800">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
                 <Image
                   src="/images/profile1.png"
-                  alt="James Lewis"
+                  alt="Reuel Donald Lobo"
                   width={800}
-                  height={800}
+                  height={1000}
                   quality={100}
                   priority
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute bottom-0 left-0 w-full p-6 z-20">
                   <div className="flex items-center gap-2">
@@ -333,69 +333,6 @@ export default function Portfolio() {
             <SkillBadge name="Github" level={65} />
             <SkillBadge name="MangoDB" level={60} />
             <SkillBadge name="Git" level={85} />
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="py-24 relative">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/4 left-1/3 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-          <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-        </div>
-
-        <div className="container relative z-10">
-          <SectionHeading title="Featured Projects" subtitle="Some of my recent work" />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
-            <ProjectCard
-              title="EduInsight - Your Gateway to Free Engineering Courses"
-              description="A full-stack course aggregation platform built with Next.js, Supabase, and TypeScript."
-              tags={["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "Recharts"]}
-              image="/images/projects/eduinsight.png"
-              demoUrl="https://eduinsight-project.netlify.app/"
-              repoUrl="https://github.com/jameslewis-git/EduInsight--Your.Gateway.to.Free.Engineering.Courses.git"
-            />
-            <ProjectCard
-              title="Quantum Habits - Daily habit checklist"
-              description="A terminal-themed habit tracking app built with Next.js, TypeScript, and Framer Motion."
-              tags={["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "dnd-kit"]}
-              image="/images/projects/checklist.png"
-              demoUrl="https://dailyhabitchecklist.netlify.app/"
-              repoUrl="https://github.com/jameslewis-git/EduInsight--Your.Gateway.to.Free.Engineering.Courses.git"
-            />
-            <ProjectCard
-              title="Random Activity Generator"
-              description="An interactive app with dynamic card animations and a modern UI, built for the Code Circuit Hackathon."
-              tags={["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Netlify"]}
-              image="/images/projects/randomactivity.png"
-              demoUrl="https://activitygeneratorcodecircuit.netlify.app/"
-              repoUrl="https://github.com/jameslewis-git/Random-activity-generator.git"
-            />
-            <ProjectCard
-              title="NutriAI - Smart Nutrition and Diet Planning"
-              description="A full-stack AI-powered nutrition and diet planning app built with Next.js, MongoDB, and Google Gemini API."
-              tags={["React", "TypeScript", "MongoDB", "Google Gemini AI", "Tailwind CSS"]}
-              image="/images/projects/nutriai.png"
-              demoUrl="https://nutriproject.netlify.app/"
-              repoUrl="https://github.com/jameslewis-git/NutriAI.git"
-            />
-            <ProjectCard
-              title="James Lewis - Digital Contact Card 👋"
-              description="A personal web hub showcasing my Full Stack Web Development and AI & Data Science expertise."
-              tags={["React", "TypeScript", "Tailwind CSS", "Next.js", "UI/UX"]}
-              image="/images/projects/contactcard.png"
-              demoUrl="https://james-contactcard.netlify.app/"
-              repoUrl="https://github.com/jameslewis-git/James-ContactCard.git"
-            />
-            <ProjectCard
-              title="Portfolio Website"
-              description="This portfolio website built with Next.js and Tailwind CSS."
-              tags={["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"]}
-              image="/images/projects/portfolio.png"
-              demoUrl="https://jameslewisportfolio.netlify.app/"
-              repoUrl="https://github.com/jameslewis-git/portfolio.git"
-            />
           </div>
         </div>
       </section>
@@ -508,69 +445,85 @@ export default function Portfolio() {
                 Educational Journey
               </h2>
               <Timeline />
-
-              {/* Certificates Button */}
-              <div className="mt-40 mb-4 flex justify-center items-center w-full">
-                <div className="w-full max-w-[520px] mx-auto">
-                  <Button
-                    className="group relative w-full rounded-2xl bg-zinc-900/50 hover:bg-zinc-900/70 transition-all duration-500 backdrop-blur-sm border border-zinc-800/50 hover:border-purple-500/50 py-14"
-                    onClick={() => setIsCertificatesOpen(true)}
-                  >
-                    {/* Background Effects */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 via-pink-500/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-gradient-x rounded-2xl"></div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-                    
-                    {/* Glowing Border */}
-                    <div className="absolute inset-[2px] rounded-xl bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 opacity-20 group-hover:opacity-100 blur-sm transition-opacity duration-500"></div>
-                    
-                    {/* Content Container */}
-                    <div className="relative px-15 py-9">
-                      {/* Top Row with Icon and Title */}
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-4">
-                          {/* Animated Certificate Icon */}
-                          <div className="relative w-12 h-12">
-                            <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl opacity-20 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
-                            <div className="relative h-full w-full flex items-center justify-center">
-                              <svg
-                                className="w-7 h-7 text-purple-400 group-hover:text-purple-300 transition-colors duration-500"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth="2"
-                                  d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                                />
-                              </svg>
-                            </div>
-                          </div>
-                          
-                          {/* Title */}
-                          <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400 group-hover:from-purple-300 group-hover:to-pink-300">
-                            View Certificates
-                          </h3>
-                        </div>
-
-                        {/* Arrow Icon */}
-                        <ArrowRight className="w-6 h-6 text-purple-400 transform translate-x-0 group-hover:translate-x-1 transition-all duration-500" />
-                      </div>
-
-                      {/* Bottom Text */}
-                      <p className="text-base text-zinc-400 group-hover:text-zinc-300 transition-colors duration-500 mt-3 ml-16">
-                        Explore my achievements and certifications
-                      </p>
-
-                      {/* Decorative Elements */}
-                      <div className="absolute bottom-1 left-2 right-2 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                      <div className="absolute top-1 left-2 right-2 h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-100"></div>
-                    </div>
-                  </Button>
-                </div>
-              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Certificates Section */}
+      <section className="py-24 relative">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+        </div>
+
+        <div className="container relative z-10">
+          <SectionHeading title="Professional Certifications" subtitle="My Cloud Certifications" />
+          <div className="mt-16">
+            <CertificateDisplay />
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-24 relative">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-1/4 left-1/3 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+        </div>
+
+        <div className="container relative z-10">
+          <SectionHeading title="Featured Projects" subtitle="Some of my recent work" />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+            <ProjectCard
+              title="EduInsight - Your Gateway to Free Engineering Courses"
+              description="A full-stack course aggregation platform built with Next.js, Supabase, and TypeScript."
+              tags={["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "Recharts"]}
+              image="/images/projects/eduinsight.png"
+              demoUrl="https://eduinsight-project.netlify.app/"
+              repoUrl="https://github.com/jameslewis-git/EduInsight--Your.Gateway.to.Free.Engineering.Courses.git"
+            />
+            <ProjectCard
+              title="Quantum Habits - Daily habit checklist"
+              description="A terminal-themed habit tracking app built with Next.js, TypeScript, and Framer Motion."
+              tags={["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "dnd-kit"]}
+              image="/images/projects/checklist.png"
+              demoUrl="https://dailyhabitchecklist.netlify.app/"
+              repoUrl="https://github.com/jameslewis-git/EduInsight--Your.Gateway.to.Free.Engineering.Courses.git"
+            />
+            <ProjectCard
+              title="Random Activity Generator"
+              description="An interactive app with dynamic card animations and a modern UI, built for the Code Circuit Hackathon."
+              tags={["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Netlify"]}
+              image="/images/projects/randomactivity.png"
+              demoUrl="https://activitygeneratorcodecircuit.netlify.app/"
+              repoUrl="https://github.com/jameslewis-git/Random-activity-generator.git"
+            />
+            <ProjectCard
+              title="NutriAI - Smart Nutrition and Diet Planning"
+              description="A full-stack AI-powered nutrition and diet planning app built with Next.js, MongoDB, and Google Gemini API."
+              tags={["React", "TypeScript", "MongoDB", "Google Gemini AI", "Tailwind CSS"]}
+              image="/images/projects/nutriai.png"
+              demoUrl="https://nutriproject.netlify.app/"
+              repoUrl="https://github.com/jameslewis-git/NutriAI.git"
+            />
+            <ProjectCard
+              title="James Lewis - Digital Contact Card 👋"
+              description="A personal web hub showcasing my Full Stack Web Development and AI & Data Science expertise."
+              tags={["React", "TypeScript", "Tailwind CSS", "Next.js", "UI/UX"]}
+              image="/images/projects/contactcard.png"
+              demoUrl="https://james-contactcard.netlify.app/"
+              repoUrl="https://github.com/jameslewis-git/James-ContactCard.git"
+            />
+            <ProjectCard
+              title="Portfolio Website"
+              description="This portfolio website built with Next.js and Tailwind CSS."
+              tags={["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"]}
+              image="/images/projects/portfolio.png"
+              demoUrl="https://jameslewisportfolio.netlify.app/"
+              repoUrl="https://github.com/jameslewis-git/portfolio.git"
+            />
           </div>
         </div>
       </section>
@@ -645,12 +598,6 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
-
-      {/* Certificates Modal */}
-      <CertificatesModal 
-        isOpen={isCertificatesOpen}
-        onClose={() => setIsCertificatesOpen(false)}
-      />
 
       {/* Resume Modal */}
       <ResumeModal isOpen={isModalOpen} onClose={closeModal} />
