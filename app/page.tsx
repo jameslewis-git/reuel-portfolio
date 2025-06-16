@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Github, Linkedin, Mail, Download } from "lucide-react"
+import { ArrowRight, Github, Linkedin, Mail, Download, Phone } from "lucide-react"
 import { motion } from "framer-motion"
 import { useState } from "react"
 
@@ -20,7 +20,6 @@ import { SectionHeading } from "@/components/section-heading"
 import { GlassmorphicCard } from "@/components/glassmorphic-card"
 import { useResume } from "@/hooks/use-resume"
 import { ResumeModal } from "@/components/resume-modal"
-import { CertificatesModal } from "@/components/certificates-modal"
 import {
   Tooltip,
   TooltipContent,
@@ -485,52 +484,34 @@ export default function Portfolio() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
             <ProjectCard
-              title="Automated SA key Rotation Module"
-              description="Automated Service Account key rotation for enhanced security and compliance in Google Cloud environments. Reduced manual overhead and mitigated credential leakage risks."
-              tags={["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "Recharts"]}
-              image="/images/projects/eduinsight.png"
-              demoUrl="https://eduinsight-project.netlify.app/"
-              repoUrl="https://github.com/jameslewis-git/EduInsight--Your.Gateway.to.Free.Engineering.Courses.git"
+               title="Automated SA Key Rotation Module"
+               description="Automated Service Account key rotation for enhanced security and compliance in Google Cloud environments. Reduced manual overhead and mitigated credential leakage risks."
+               tags={["GCP", "Security", "Automation", "IAM", "Python", "Cloud Functions"]}
             />
             <ProjectCard
-              title="Quantum Habits - Daily habit checklist"
-              description="A terminal-themed habit tracking app built with Next.js, TypeScript, and Framer Motion."
-              tags={["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "dnd-kit"]}
-              image="/images/projects/checklist.png"
-              demoUrl="https://dailyhabitchecklist.netlify.app/"
-              repoUrl="https://github.com/jameslewis-git/EduInsight--Your.Gateway.to.Free.Engineering.Courses.git"
+               title="Google Cloud Identity Suspension Module"
+               description="Developed a module to automatically suspend inactive or risky Google Cloud Identity users based on policy rules, improving access control and reducing insider threat surfaces."
+               tags={["GCP", "Cloud Identity", "Security", "IAM", "Python", "Automation"]}
             />
             <ProjectCard
-              title="Random Activity Generator"
-              description="An interactive app with dynamic card animations and a modern UI, built for the Code Circuit Hackathon."
-              tags={["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Netlify"]}
-              image="/images/projects/randomactivity.png"
-              demoUrl="https://activitygeneratorcodecircuit.netlify.app/"
-              repoUrl="https://github.com/jameslewis-git/Random-activity-generator.git"
+              title="Alert Management Middleware"
+              description="Created a centralized middleware to route, filter, and enrich alerts across multi-cloud monitoring tools. Enabled better observability and faster incident response for SRE teams."
+              tags={["GCP", "Monitoring", "SRE", "Middleware", "Node.js", "Pub/Sub", "Cloud Functions"]}
             />
             <ProjectCard
-              title="NutriAI - Smart Nutrition and Diet Planning"
-              description="A full-stack AI-powered nutrition and diet planning app built with Next.js, MongoDB, and Google Gemini API."
-              tags={["React", "TypeScript", "MongoDB", "Google Gemini AI", "Tailwind CSS"]}
-              image="/images/projects/nutriai.png"
-              demoUrl="https://nutriproject.netlify.app/"
-              repoUrl="https://github.com/jameslewis-git/NutriAI.git"
+               title="FinOps Dashboard on Looker"
+               description="Built an interactive FinOps dashboard using Looker to provide insights into cloud spending, budget trends, and optimization opportunities for enterprise financial governance."
+               tags={["Looker", "FinOps", "GCP", "BigQuery", "Data Studio", "Cloud Billing"]}             
             />
             <ProjectCard
-              title="James Lewis - Digital Contact Card 👋"
-              description="A personal web hub showcasing my Full Stack Web Development and AI & Data Science expertise."
-              tags={["React", "TypeScript", "Tailwind CSS", "Next.js", "UI/UX"]}
-              image="/images/projects/contactcard.png"
-              demoUrl="https://james-contactcard.netlify.app/"
-              repoUrl="https://github.com/jameslewis-git/James-ContactCard.git"
+              title="GCP Service Account Compliance Dashboard"
+              description="Developed a compliance dashboard to audit GCP service accounts for key rotation, least privilege, and policy violations. Enabled visibility into security gaps at scale."
+              tags={["GCP", "Compliance", "Security", "BigQuery", "Looker", "Monitoring"]}
             />
             <ProjectCard
-              title="Portfolio Website"
-              description="This portfolio website built with Next.js and Tailwind CSS."
-              tags={["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"]}
-              image="/images/projects/portfolio.png"
-              demoUrl="https://jameslewisportfolio.netlify.app/"
-              repoUrl="https://github.com/jameslewis-git/portfolio.git"
+             title="Threat Notification Module – Google Cloud SCC"
+             description="Designed a threat notification system that integrates with Google Cloud Security Command Center to alert teams about high-severity findings in real-time via Slack and email."
+             tags={["GCP", "Security", "SCC", "Threat Detection", "Slack API", "Pub/Sub"]}
             />
           </div>
         </div>
@@ -569,37 +550,38 @@ export default function Portfolio() {
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center">
-                    <Github className="h-5 w-5 text-purple-400" />
+                    <Phone className="h-5 w-5 text-purple-400" />
                   </div>
                   <div>
-                    <div className="text-sm text-zinc-500">GitHub</div>
-                    <div className="font-medium">github.com/reuel-git</div>
+                    <div className="text-sm text-zinc-500">Phone</div>
+                    <div className="font-medium">+91 8310142706</div>
                   </div>
                 </div>
               </div>
 
               {/* Current Status */}
-              <div className="mt-8 space-y-4">
-                <h4 className="text-xl font-bold mb-6">Current Status</h4>
-                <div className="grid grid-cols-1 gap-4">
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
-                    <span className="text-zinc-300">Available for freelance work and full-time opportunities</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-blue-500 animate-pulse"></div>
-                    <span className="text-zinc-300">Working on personal projects</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-purple-500 animate-pulse"></div>
-                    <span className="text-zinc-300">Actively seeking internship opportunities</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-yellow-500 animate-pulse"></div>
-                    <span className="text-zinc-300">Open to collaboration</span>
-                  </div>
-                </div>
-              </div>
+<div className="mt-8 space-y-4">
+  <h4 className="text-xl font-bold mb-6">Current Status</h4>
+  <div className="grid grid-cols-1 gap-4">
+    <div className="flex items-center gap-2">
+      <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
+      <span className="text-zinc-300">Open to Cloud Architecture consulting and strategic roles</span>
+    </div>
+    <div className="flex items-center gap-2">
+      <div className="w-3 h-3 rounded-full bg-blue-500 animate-pulse"></div>
+      <span className="text-zinc-300">Delivering enterprise cloud solutions at Niveus Solutions (NTT Data)</span>
+    </div>
+    <div className="flex items-center gap-2">
+      <div className="w-3 h-3 rounded-full bg-purple-500 animate-pulse"></div>
+      <span className="text-zinc-300">Building cloud automation, FinOps, and security modules</span>
+    </div>
+    <div className="flex items-center gap-2">
+      <div className="w-3 h-3 rounded-full bg-yellow-500 animate-pulse"></div>
+      <span className="text-zinc-300">Open to collaboration on cloud-native or security-focused projects</span>
+    </div>
+  </div>
+</div>
+
             </GlassmorphicCard>
 
             <ContactForm />
