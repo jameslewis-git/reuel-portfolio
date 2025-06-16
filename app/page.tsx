@@ -367,8 +367,8 @@ export default function Portfolio() {
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold">Currently</h3>
-                      <p className="text-zinc-400">Pursuing B.E. in AI and Data Science</p>
+                      <h3 className="text-xl font-bold">Current Role</h3>
+                      <p className="text-zinc-400">Cloud Architect at Niveus Solutions (Part of NTT Data) </p>
                     </div>
                   </div>
 
@@ -376,12 +376,12 @@ export default function Portfolio() {
                     {/* Education Details */}
                     <div className="space-y-4">
                       <h4 className="text-lg font-semibold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
-                        Education
+                      Certifications
                       </h4>
                       <div className="space-y-2">
-                        <p className="text-zinc-300">Vidyavardhini's College of Engineering and Technology</p>
-                        <p className="text-zinc-400">B.E. in Artificial Intelligence and Data Science</p>
-                        <p className="text-zinc-400">2023 - 2027</p>
+                        <p className="text-zinc-300">Google Cloud Certifications</p>
+                        <p className="text-zinc-400">Cloud Digital Leader | Associate Cloud Engineer</p>
+                        <p className="text-zinc-400">Issued by Google Cloud</p>
                       </div>
                     </div>
 
@@ -393,19 +393,27 @@ export default function Portfolio() {
                       <ul className="space-y-2 text-zinc-300">
                         <li className="flex items-center gap-2">
                           <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
-                          <span>Active member of College Tech Club</span>
+                          <span>$40M annually for enterprise clients through FinOps practices</span>
                         </li>
                         <li className="flex items-center gap-2">
                           <div className="w-1.5 h-1.5 rounded-full bg-pink-500"></div>
-                          <span>Participated in Code Circuit Hackathon</span>
+                          <span>Remediated 6,000+ vulnerabilities to improve cloud security posture</span>
                         </li>
                         <li className="flex items-center gap-2">
                           <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
-                          <span>Built 5+ Full Stack Projects</span>
+                          <span>Automated workflows saving 200+ man-hours monthly</span>
                         </li>
                         <li className="flex items-center gap-2">
                           <div className="w-1.5 h-1.5 rounded-full bg-pink-500"></div>
-                          <span>Learning Web Development</span>
+                          <span>Recipient of the "Standout Super Star" Award at Niveus Solutions</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
+                          <span>Certified Google Cloud Digital Leader & Associate Cloud Engineer</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <div className="w-1.5 h-1.5 rounded-full bg-pink-500"></div>
+                          <span>Speaker and mentor on Cloud Security and Automation practices</span>
                         </li>
                       </ul>
                     </div>
@@ -419,19 +427,19 @@ export default function Portfolio() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                        <span className="text-zinc-300">Learning Next.js</span>
+                        <span className="text-zinc-300">Multi-Cloud Security Architecture</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
-                        <span className="text-zinc-300">AI/ML Projects</span>
+                        <span className="text-zinc-300">FinOps & Cloud Cost Optimization</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></div>
-                        <span className="text-zinc-300">Freelance Work</span>
+                        <span className="text-zinc-300">Cloud Automation & DevSecOps</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></div>
-                        <span className="text-zinc-300">Internship Ready</span>
+                        <span className="text-zinc-300">Scaling Cloud Governance Models</span>
                       </div>
                     </div>
                   </div>
@@ -442,7 +450,7 @@ export default function Portfolio() {
             {/* Educational Timeline */}
             <div className="mt-16">
               <h2 className="text-2xl font-semibold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
-                Educational Journey
+              Cloud Chapters
               </h2>
               <Timeline />
             </div>
@@ -477,8 +485,8 @@ export default function Portfolio() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
             <ProjectCard
-              title="EduInsight - Your Gateway to Free Engineering Courses"
-              description="A full-stack course aggregation platform built with Next.js, Supabase, and TypeScript."
+              title="Automated SA key Rotation Module"
+              description="Automated Service Account key rotation for enhanced security and compliance in Google Cloud environments. Reduced manual overhead and mitigated credential leakage risks."
               tags={["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "Recharts"]}
               image="/images/projects/eduinsight.png"
               demoUrl="https://eduinsight-project.netlify.app/"

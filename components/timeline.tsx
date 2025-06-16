@@ -4,62 +4,58 @@ import { motion } from "framer-motion"
 import { useMobile } from "@/hooks/use-mobile"
 
 const experiences = [
-  {
-    title: "Cloud Expert - Architecture - CloudOps",
-    company: "NIVEUS SOLUTIONS PVT LTD (Part of NTT Data)",
-    period: "Oct 2024 - Present",
-    description:
-      "Leading CloudOps, Security Operations, Risk, and Compliance globally. Managing risk governance, security architecture, and operations across projects. Driving cloud service development, governance models, and milestone delivery. Achieved $40M annual savings through FinOps and automated workflows saving 200+ man-hours monthly.",
-  },
-  {
-    title: "Technical Leadership & Architecture",
-    company: "NIVEUS SOLUTIONS PVT LTD",
-    period: "2024 - Present",
-    description:
-      "Providing technical design and leadership for new solutions using microservices and cloud platforms. Managing infrastructure deployment, performing network discoveries, and assisting in cloud migration strategies. Participating in pre-sales activities and coaching teams on cloud best practices.",
-  },
-  {
-    title: "Cloud Security & Operations",
-    company: "NIVEUS SOLUTIONS PVT LTD",
-    period: "2024 - Present",
-    description:
-      "Successfully remediated 6,000+ vulnerabilities, enhancing cloud security posture. Implementing SecOps practices and managing multi-cloud security posture. Leading customer onboarding and cloud service development initiatives.",
-  },
-  {
-    title: "B.E. in AI & Data Science",
-    company: "Vidyavardhini's College of Engineering and Technology",
-    period: "2023 - Present",
-    description:
-      "Currently pursuing Bachelor's in AI & Data Science. Active in tech clubs, building projects, and learning new technologies.",
-  },
-  {
-    title: "Technical Team Member - NSDC",
-    company: "NSDC - National Student Data Corps ",
-    period: "2023 - Present",
-    description:
-      "Responsible for building and maintaining the events for the organization. Also, responsible for the technical side of the events.",
-  },
-  {
-    title: "Technical Team Member - PAT",
-    company: "PAT - Placements and Training Cell",
-    period: "2024 - Present",
-    description:
-      "Responsible for the technical side of the events.",
-  },
-  {
-    title: "Full Stack Development",
-    company: "Self-Learning & Projects",
-    period: "2023 - Present",
-    description:
-      "Mastered modern web technologies including React, Next.js, and Node.js. Built multiple full-stack projects and participated in hackathons.",
-  },
-  {
-    title: "Higher Secondary Education",
-    company: "Junior College",
-    period: "2021 - 2023",
-    description: "Completed HSC with focus on Science and Mathematics. Developed strong foundation in programming and problem-solving.",
-  },
-]
+  
+    {
+      title: "Cloud Expert – Architecture & CloudOps",
+      company: "Niveus Solutions Pvt Ltd (Part of NTT Data)",
+      period: "Oct 2024 – Present",
+      description:
+        "Leading CloudOps, Security Operations, Risk, and Compliance globally. Managing risk governance and security architecture across projects. Driving cloud service development and delivering milestones. Saved $40M annually via FinOps; automated workflows saving 200+ man-hours monthly.",
+    },
+    {
+      title: "Cloud Lead – Cloud Security & Compliance",
+      company: "Niveus Solutions Pvt Ltd",
+      period: "June 2022 – Oct 2024",
+      description:
+        "Headed cloud security operations and risk governance. Conducted security audits for BFSI, healthcare, and automotive clients. Remediated 6,000+ vulnerabilities and implemented CSPM frameworks to harden cloud security posture.",
+    },
+    {
+      title: "Linux/Cloud Support Engineer",
+      company: "Webscale Networks Pvt Ltd",
+      period: "Oct 2021 – June 2022",
+      description:
+        "Managed patching and vulnerability remediation for Linux servers on AWS & GCP. Automated patch strategies and improved system uptime. Provided cloud infrastructure support and implemented monitoring solutions across hybrid environments.",
+    },
+    {
+      title: "Specialist Technical Support (SME)",
+      company: "GlowTouch Technologies",
+      period: "Jan 2021 – Nov 2021",
+      description:
+        "Led support improvement projects and reviewed internal KB articles. Ensured SLA adherence and worked on process enhancements to improve customer experience and internal operations.",
+    },
+    {
+      title: "Technical Support Administrator",
+      company: "GlowTouch Technologies",
+      period: "Nov 2019 – Dec 2020",
+      description:
+        "Handled technical issues related to CMS platforms like WordPress and Magento. Oversaw website migrations, DNS troubleshooting, and VPS hosting support as part of the Product Specialist team.",
+    },
+    {
+      title: "Content Editor",
+      company: "STATS Perform",
+      period: "Mar 2018 – Nov 2019",
+      description:
+        "Curated sports data for XML feeds and maintained fixture accuracy across multiple competitions. Conducted web-based research and ensured up-to-date venue and scheduling information.",
+    },
+    {
+      title: "Bachelor of Commerce (B.Com)",
+      company: "Mangalore University",
+      period: "2015 – 2018",
+      description:
+        "Built foundational business knowledge that supports FinOps, governance, and cost optimization in cloud roles. Developed early analytical skills essential for cloud architecture and compliance.",
+    },
+  ]  
+
 
 export function Timeline() {
   const isMobile = useMobile()
