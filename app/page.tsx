@@ -321,18 +321,18 @@ export default function Portfolio() {
           <SectionHeading title="My Skills" subtitle="Technologies I work with" />
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-16">
-            <SkillBadge name="JavaScript" level={70} />
-            <SkillBadge name="TypeScript" level={95} />
-            <SkillBadge name="React" level={95} />
-            <SkillBadge name="Next.js" level={90} />
-            <SkillBadge name="Node.js" level={80} />
-            <SkillBadge name="HTML/CSS" level={95} />
-            <SkillBadge name="Tailwind CSS" level={90} />
-            <SkillBadge name="Python" level={85} />
-            <SkillBadge name="PostgreSQL" level={70} />
-            <SkillBadge name="Github" level={65} />
-            <SkillBadge name="MangoDB" level={60} />
-            <SkillBadge name="Git" level={85} />
+            <SkillBadge name="Cloud Architecture" level={95} />
+            <SkillBadge name="Cloud Security" level={90} />
+            <SkillBadge name="FinOps" level={100} />
+            <SkillBadge name="Cloud Automation" level={95} />
+            <SkillBadge name="Kubernetes" level={100} />
+            <SkillBadge name="Docker" level={95} />
+            <SkillBadge name="Cloud Cost Optimization" level={90} />
+            <SkillBadge name="Microservices" level={85} />
+            <SkillBadge name="CI/CD  (GitHub Actions, GitLab CI/CD, Azure DevOps)" level={90} />
+            <SkillBadge name="Multi-Cloud Strategy (AWS, Azure, GCP)" level={85} />
+            <SkillBadge name="Cloud Governance" level={80} />
+            <SkillBadge name="Cloud Strategy & Roadmapping" level={95} />
           </div>
         </div>
       </section>
@@ -345,7 +345,7 @@ export default function Portfolio() {
         </div>
 
         <div className="container relative z-10">
-          <SectionHeading title="Education & Experience" subtitle="My academic journey" />
+          <SectionHeading title="Experience & Education" subtitle="My professional journey" />
 
           <div className="mt-16">
             {/* Current Status Card */}
