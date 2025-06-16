@@ -1,8 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Download, FileText } from "lucide-react"
+import { FileText, ArrowUpRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 interface Certificate {
   id: number
@@ -16,19 +17,19 @@ interface Certificate {
 const certificates: Certificate[] = [
   {
     id: 1,
-    title: "AWS Certified Cloud Engineer",
-    issuer: "Amazon Web Services (AWS)",
-    date: "2023",
-    image: "/certificates/aws-solutions-architect.png",
-    pdf: "/certificates/ACE.pdf"
+    title: "Associate Cloud Engineer",
+    issuer: "Google Cloud",
+    date: "2022 - 2025",
+    image: "/certificates/ACEpic.png",
+    pdf: "https://www.credential.net/9da8cc68-239a-4648-b1f9-88f11a1f2322#acc.mcgqkJDI"
   },
   {
     id: 2,
     title: "Cloud Digital Leader",
     issuer: "Google Cloud",
-    date: "2023",
-    image: "/certificates/google-cloud-architect.png",
-    pdf: "/certificates/CDL.pdf"
+    date: "2022 - 2025",
+    image: "/certificates/CDLpic.png",
+    pdf: "https://www.credential.net/45c862cd-908c-4920-8c71-7633f194b4ce#acc.DThN8ue4"
   }
 ];
 
@@ -45,6 +46,16 @@ export function CertificateDisplay() {
         >
           <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-500"></div>
           <div className="relative p-6 bg-zinc-900/90 backdrop-blur-sm rounded-xl border border-zinc-800 group-hover:border-purple-500/50 transition-colors duration-500">
+            <div className="mb-6 relative aspect-[4/3] rounded-lg overflow-hidden border border-zinc-700 bg-zinc-800/50">
+              <Image
+                src={cert.image}
+                alt={`${cert.title} Certificate`}
+                fill
+                className="object-contain p-4 hover:scale-105 transition-transform duration-300"
+                priority
+              />
+            </div>
+            
             <div className="flex items-center gap-4 mb-4">
               <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
                 <FileText className="w-6 h-6 text-white" />
@@ -63,7 +74,7 @@ export function CertificateDisplay() {
                   className="bg-zinc-800 hover:bg-zinc-700 group"
                   onClick={() => window.open(cert.pdf, '_blank')}
                 >
-                  <Download className="w-4 h-4 mr-2 group-hover:text-purple-400 transition-colors" />
+                  <ArrowUpRight className="w-4 h-4 mr-2 group-hover:text-purple-400 transition-colors" />
                   View Certificate
                 </Button>
               )}
