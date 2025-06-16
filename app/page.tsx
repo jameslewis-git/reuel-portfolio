@@ -50,19 +50,18 @@ export default function Portfolio() {
           <div className="space-y-6">
             <div className="inline-block">
               <div className="relative px-3 py-1 text-sm font-medium rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-4">
-                <span className="relative z-10">Software Engineer & FullStack Web Developer</span>
+                <span className="relative z-10">Cloud Expert - Architecture - CloudOps (GCP, AWS, and Azure)</span>
                 <span className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 animate-pulse"></span>
               </div>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
               <span className="block">Hi, I'm</span>
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
-                James Lewis
+                Reuel Donald Lobo
               </span>
             </h1>
             <p className="text-xl text-zinc-400 max-w-[600px]">
-              AI & Data Science Trailblazer | Full-Stack Innovator Building Smart UIs & Bold Solutions | Coding the
-              Future with Passion
+              Cloud Architecture Expert | Leading CloudOps, Security Operations & Risk Management | Driving Innovation in Multi-Cloud Environments
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <Button 
@@ -87,7 +86,7 @@ export default function Portfolio() {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Link href="https://github.com/jameslewis-git" target="_blank" rel="noopener noreferrer">
+                    <Link href="https://github.com/reuel-git" target="_blank" rel="noopener noreferrer">
                       <Button
                         variant="ghost"
                         size="icon"
@@ -105,7 +104,7 @@ export default function Portfolio() {
 
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Link href="https://www.linkedin.com/in/-jameslewis/" target="_blank" rel="noopener noreferrer">
+                    <Link href="https://www.linkedin.com/in/reuel-lobo-738691163/" target="_blank" rel="noopener noreferrer">
                       <Button
                         variant="ghost"
                         size="icon"
@@ -123,7 +122,7 @@ export default function Portfolio() {
 
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Link href="mailto:jamesslewiss95@gmail.com">
+                    <Link href="mailto:reueldonald@gmail.com">
                       <Button
                         variant="ghost"
                         size="icon"
@@ -263,28 +262,27 @@ export default function Portfolio() {
             <div className="space-y-6">
               <GlassmorphicCard>
                 <p className="text-lg text-zinc-300">
-                I'm James Lewis, a driven B.E. student in AI and Data Science at Vidyavardhini's College of Engineering and Technology, Mumbai. I'm passionate about turning ideas into reality through coding and AI innovation. My focus is on creating smart, impactful solutions that push the boundaries of technology.
+                I'm Reuel Donald Lobo, a Cloud Expert specializing in Architecture and CloudOps at NIVEUS SOLUTIONS PVT LTD (Part of NTT Data). I lead CloudOps, Security Operations, Risk, and Compliance globally for customers, driving innovation in multi-cloud environments.
                 </p>
                 <p className="text-lg text-zinc-300 mt-4">
-                I thrive on solving complex problems, from building machine learning models to crafting intuitive software. With a strong foundation in coding, I'm always exploring new ways to innovate and make a difference through tech.
+                With expertise in GCP, AWS, and Azure, I'm responsible for risk governance, security architecture, and operations across projects. I specialize in multi-cloud security posture management and customer onboarding, while driving cloud service development and governance models.
                 </p>
                 <p className="text-lg text-zinc-300 mt-4">
-                Eager to join cutting-edge AI and engineering teams, I'm seeking internships or entry-level roles to contribute my skills and learn from the best. 
-                Let's connect to build the future of tech together!
+                My achievements include saving $40 million annually for BFSI, healthcare, banking, and automotive industry customers through FinOps practices, automating workflows to save 200+ man-hours monthly, and remediating 6,000+ vulnerabilities to enhance cloud security posture.
                 </p>
 
                 <div className="grid grid-cols-2 gap-4 mt-8">
                   <div className="space-y-1">
                     <div className="text-sm text-zinc-500">Name</div>
-                    <div className="font-medium">James Lewis</div>
+                    <div className="font-medium">Reuel Donald Lobo</div>
                   </div>
                   <div className="space-y-1">
-                    <div className="text-sm text-zinc-500">Email</div>
-                    <div className="font-medium">jamesslewiss95@gmail.com</div>
+                    <div className="text-sm text-zinc-500">Position</div>
+                    <div className="font-medium">Cloud Expert - Architecture</div>
                   </div>
                   <div className="space-y-1">
                     <div className="text-sm text-zinc-500">Location</div>
-                    <div className="font-medium">Mumbai, India</div>
+                    <div className="font-medium">Bangalore, Karnataka, India</div>
                   </div>
                 </div>
 
@@ -596,7 +594,7 @@ export default function Portfolio() {
                   </div>
                   <div>
                     <div className="text-sm text-zinc-500">Email</div>
-                    <div className="font-medium">jamesslewiss95@gmail.com</div>
+                    <div className="font-medium">reueldonald@gmail.com</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -605,7 +603,7 @@ export default function Portfolio() {
                   </div>
                   <div>
                     <div className="text-sm text-zinc-500">LinkedIn</div>
-                    <div className="font-medium">linkedin.com/in/-jameslewis</div>
+                    <div className="font-medium">linkedin.com/in/reuel-lobo-738691163</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -614,7 +612,7 @@ export default function Portfolio() {
                   </div>
                   <div>
                     <div className="text-sm text-zinc-500">GitHub</div>
-                    <div className="font-medium">github.com/jameslewis-git</div>
+                    <div className="font-medium">github.com/reuel-git</div>
                   </div>
                 </div>
               </div>
@@ -662,13 +660,13 @@ export default function Portfolio() {
         <div className="container flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
             <Link href="/" className="font-bold text-xl">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">James</span>
-              <span className="text-white"> Lewis</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">Reuel</span>
+              <span className="text-white"> Donald Lobo</span>
             </Link>
-            <p className="text-sm text-zinc-500 mt-2">© {new Date().getFullYear()} James Lewis. All rights reserved.</p>
+            <p className="text-sm text-zinc-500 mt-2">© {new Date().getFullYear()} Reuel Donald Lobo. All rights reserved.</p>
           </div>
           <div className="flex gap-4">
-            <Link href="https://github.com/jameslewis-git" target="_blank" rel="noopener noreferrer">
+            <Link href="https://github.com/reuel-git" target="_blank" rel="noopener noreferrer">
               <Button
                 variant="ghost"
                 size="icon"
@@ -678,7 +676,7 @@ export default function Portfolio() {
                 <span className="sr-only">GitHub</span>
               </Button>
             </Link>
-            <Link href="https://www.linkedin.com/in/-jameslewis/" target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.linkedin.com/in/reuel-lobo-738691163/" target="_blank" rel="noopener noreferrer">
               <Button
                 variant="ghost"
                 size="icon"
@@ -688,7 +686,7 @@ export default function Portfolio() {
                 <span className="sr-only">LinkedIn</span>
               </Button>
             </Link>
-            <Link href="mailto:jamesslewiss95@gmail.com">
+            <Link href="mailto:reueldonald@gmail.com">
               <Button
                 variant="ghost"
                 size="icon"

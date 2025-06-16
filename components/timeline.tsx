@@ -5,6 +5,27 @@ import { useMobile } from "@/hooks/use-mobile"
 
 const experiences = [
   {
+    title: "Cloud Expert - Architecture - CloudOps",
+    company: "NIVEUS SOLUTIONS PVT LTD (Part of NTT Data)",
+    period: "Oct 2024 - Present",
+    description:
+      "Leading CloudOps, Security Operations, Risk, and Compliance globally. Managing risk governance, security architecture, and operations across projects. Driving cloud service development, governance models, and milestone delivery. Achieved $40M annual savings through FinOps and automated workflows saving 200+ man-hours monthly.",
+  },
+  {
+    title: "Technical Leadership & Architecture",
+    company: "NIVEUS SOLUTIONS PVT LTD",
+    period: "2024 - Present",
+    description:
+      "Providing technical design and leadership for new solutions using microservices and cloud platforms. Managing infrastructure deployment, performing network discoveries, and assisting in cloud migration strategies. Participating in pre-sales activities and coaching teams on cloud best practices.",
+  },
+  {
+    title: "Cloud Security & Operations",
+    company: "NIVEUS SOLUTIONS PVT LTD",
+    period: "2024 - Present",
+    description:
+      "Successfully remediated 6,000+ vulnerabilities, enhancing cloud security posture. Implementing SecOps practices and managing multi-cloud security posture. Leading customer onboarding and cloud service development initiatives.",
+  },
+  {
     title: "B.E. in AI & Data Science",
     company: "Vidyavardhini's College of Engineering and Technology",
     period: "2023 - Present",

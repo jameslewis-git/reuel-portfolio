@@ -1,16 +1,16 @@
-# James Lewis - Portfolio Website 🚀
+# Reuel Donald Lobo - Portfolio Website 🚀
 
 <div align="center">
-  <img src="/public/images/profile1.png" alt="James Lewis" width="200" style="border-radius: 50%"/>
+  <img src="/public/images/profile1.png" alt="Reuel Donald Lobo" width="200" style="border-radius: 50%"/>
   
-  [![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-purple?style=for-the-badge)](https://jameslewisportfolio.netlify.app/)
-  [![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=for-the-badge&logo=github)](https://github.com/jameslewis-git)
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/-jameslewis/)
+  [![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-purple?style=for-the-badge)](https://reuel-portfolio.netlify.app/)
+  [![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=for-the-badge&logo=github)](https://github.com/reuel-git)
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/reuel-lobo-738691163/)
 </div>
 
 ## 🌟 Overview
 
-Welcome to my portfolio website repository! This is a modern, responsive web application built with Next.js and TypeScript, showcasing my projects and skills as a Full Stack Developer and AI & Data Science enthusiast.
+Welcome to my portfolio website repository! This is a modern, responsive web application built with Next.js and TypeScript, showcasing my expertise as a Cloud Expert specializing in Architecture and CloudOps, with a focus on multi-cloud environments (GCP, AWS, and Azure).
 
 ### ✨ Features
 
@@ -20,9 +20,9 @@ Welcome to my portfolio website repository! This is a modern, responsive web app
 - ⚡ Fast page loads with Next.js
 - 🎯 Interactive animations with Framer Motion
 - 📧 Contact form with email integration
-- 🔍 Project showcase with live demos
+- 🔍 Professional experience showcase
 - 📄 Downloadable resume
-- 🏆 Certificates showcase
+- 🏆 Achievements showcase
 
 ## 🛠️ Tech Stack
 
@@ -47,7 +47,7 @@ Welcome to my portfolio website repository! This is a modern, responsive web app
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/jameslewis-git/portfolio.git
+   git clone https://github.com/reuel-git/portfolio.git
    cd portfolio
    ```
 
@@ -95,11 +95,10 @@ portfolio/
 - Custom cursor effects
 - Progress bar animations
 
-### Project Showcase
-- Dynamic project cards
-- Live demo links
-- GitHub repository links
-- Technology tags
+### Professional Experience
+- Detailed experience timeline
+- Achievement highlights
+- Technical expertise showcase
 - Project descriptions
 
 ### Contact Form
@@ -134,12 +133,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Feel free to reach out if you have any questions or just want to connect!
 
-- Email: jamesslewiss95@gmail.com
-- LinkedIn: [James Lewis](https://www.linkedin.com/in/-jameslewis/)
-- GitHub: [@jameslewis-git](https://github.com/jameslewis-git)
+- Email: reueldonald@gmail.com
+- LinkedIn: [Reuel Donald Lobo](https://www.linkedin.com/in/reuel-lobo-738691163/)
+- GitHub: [@reuel-git](https://github.com/reuel-git)
 
 ---
 
 <div align="center">
-  Made with ❤️ by James Lewis
+  Made with ❤️ by Reuel Donald Lobo
 </div> 
