@@ -3,24 +3,26 @@ const fs = require('fs');
 const path = require('path');
 
 async function generateFavicons() {
-  const svgBuffer = fs.readFileSync(path.join(__dirname, '../public/favicon.svg'));
-  
-  // Generate favicon.ico (32x32)
-  await sharp(svgBuffer)
-    .resize(32, 32)
-    .toFile(path.join(__dirname, '../public/favicon.ico'));
+  const publicDir = path.join(process.cwd(), 'public');
+  const svgBuffer = fs.readFileSync(path.join(publicDir, 'favicon.svg'));
 
   // Generate icon.png (32x32)
   await sharp(svgBuffer)
     .resize(32, 32)
     .png()
-    .toFile(path.join(__dirname, '../public/icon.png'));
+    .toFile(path.join(publicDir, 'icon.png'));
 
   // Generate apple-touch-icon.png (180x180)
   await sharp(svgBuffer)
     .resize(180, 180)
     .png()
-    .toFile(path.join(__dirname, '../public/apple-touch-icon.png'));
+    .toFile(path.join(publicDir, 'apple-touch-icon.png'));
+
+  // Generate favicon.ico (32x32)
+  await sharp(svgBuffer)
+    .resize(32, 32)
+    .png()
+    .toFile(path.join(publicDir, 'favicon.ico'));
 
   console.log('Favicon files generated successfully!');
 }

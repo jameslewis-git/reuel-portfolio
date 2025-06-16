@@ -2,14 +2,15 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'James Lewis | Software Engineer',
-  description: 'Full-Stack Developer specializing in modern web technologies',
+  title: 'Reuel Lobo | Cloud Architect',
+  description: 'Designing Scalable Cloud Infrastructures with Security at the Core',
   icons: {
     icon: [
       {
         url: '/favicon.ico',
         sizes: 'any',
       },
+      
       {
         url: '/icon.png',
         type: 'image/png',
